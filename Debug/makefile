@@ -4,7 +4,7 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := C:/ti/ccs2020/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS
+CG_TOOL_ROOT := D:/Programe File/ccs/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS
 
 GEN_OPTS__FLAG := @"./device.opt" 
 GEN_CMDS__FLAG := -Wl,-l"./device_linker.cmd" 
@@ -149,14 +149,14 @@ all: $(OBJS) $(GEN_CMDS)
 motor.out: $(OBJS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
-	"C:/ti/ccs2020/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS/bin/tiarmclang.exe" @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O0 -gdwarf-3 -Wl,-m"motor.map" -Wl,-i"C:/ti/mspm0_sdk_2_01_00_03/source" -Wl,-i"C:/Users/ASUS/workspace_ccstheia/motor" -Wl,-i"C:/Users/ASUS/workspace_ccstheia/motor/Debug/syscfg" -Wl,-i"C:/ti/ccs2020/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS/lib" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="motor_linkInfo.xml" -Wl,--rom_model -o "motor.out" $(ORDERED_OBJS)
+	"D:/Programe File/ccs/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS/bin/tiarmclang.exe" @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O0 -gdwarf-3 -Wl,-m"motor.map" -Wl,-i"D:/Programe File/ccs/mspm0_sdk_2_05_01_00/source" -Wl,-i"C:/Users/34118/Desktop/WorkSpace/motor" -Wl,-i"C:/Users/34118/Desktop/WorkSpace/motor/Debug/syscfg" -Wl,-i"D:/Programe File/ccs/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS/lib" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="motor_linkInfo.xml" -Wl,--rom_model -o "motor.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 motor.hex: $(EXE_OUTPUTS)
 	@echo 'Building secondary target: "$@"'
 	@echo 'Invoking: Arm Hex Utility'
-	"C:/ti/ccs2020/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS/bin/tiarmhex.exe" --byte --memwidth=8 --romwidth=8 --diag_wrap=off --intel -o "motor.hex" $(EXE_OUTPUTS__QUOTED)
+	"D:/Programe File/ccs/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS/bin/tiarmhex.exe" --byte --memwidth=8 --romwidth=8 --diag_wrap=off --intel -o "motor.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building secondary target: "$@"'
 	@echo ' '
 

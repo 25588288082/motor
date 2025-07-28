@@ -41,6 +41,7 @@
 #define ti_msp_dl_config_h
 
 #define CONFIG_MSPM0G350X
+#define CONFIG_MSPM0G3505
 
 #if defined(__ti_version__) || defined(__TI_COMPILER_VERSION__)
 #define SYSCONFIG_WEAK __attribute__((weak))
@@ -107,6 +108,7 @@ extern "C" {
 
 /* Defines for UART_0 */
 #define UART_0_INST                                                        UART0
+#define UART_0_INST_FREQUENCY                                           40000000
 #define UART_0_INST_IRQHandler                                  UART0_IRQHandler
 #define UART_0_INST_INT_IRQN                                      UART0_INT_IRQn
 #define GPIO_UART_0_RX_PORT                                                GPIOA
